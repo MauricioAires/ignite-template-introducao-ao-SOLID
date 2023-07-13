@@ -1,38 +1,32 @@
-<p align="center">
-  <img alt="Rocketseat Education" src="https://avatars.githubusercontent.com/u/69590972?s=200&v=4" width="100px" />
-</p>
+<h1 align="center">
+    <img src="./github/assets/cover.png">
+</h1>
 
-<p align="center">
-  <img src="https://img.shields.io/static/v1?label=Rocketseat&message=Education&color=8257e5&labelColor=202024" alt="Rocketseat Project" />
-  <a href="LICENSE"><img  src="https://img.shields.io/static/v1?label=License&message=MIT&color=8257e5&labelColor=202024" alt="License"></a>
-</p>
+## Sobre o projeto
 
+Essa será uma aplicação de listagem e cadastro de usuários. Para que a listagem de usuários funcione, o usuário que solicita a listagem deve ser um admin
 
-## 💻 Projeto
+## Tecnologias
 
-ignite-template-introducao-ao-SOLID
+- [Express](https://expressjs.com/)
+- [TypeScript](https://www.typescriptlang.org/docs/)
+- [Docker](https://docs.docker.com/)
+- [PostgreSQL](https://www.postgresql.org/docs/)
+- [ESLint](https://eslint.org/docs/user-guide/getting-started)
+- [Prettier](https://prettier.io/docs/en/)
+- [Swagger](https://swagger.io/docs/)
+- [SOLID Principles](https://en.wikipedia.org/wiki/SOLID)
 
-## 📝 Licença
+## Instalação
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+```sh
+yarn
+```
 
----
+### Contribuição
 
-<p align="center">
-  Feito com 💜 by Rocketseat
-</p>
+Contribuições são bem-vindas! Para contribuir, basta abrir uma issue ou pull request neste repositório.
 
+### Autor
 
-<!--START_SECTION:footer-->
-
-<br />
-<br />
-
-<p align="center">
-  <a href="https://discord.gg/rocketseat" target="_blank">
-    <img align="center" src="https://storage.googleapis.com/golden-wind/comunidade/rodape.svg" alt="banner"/>
-  </a>
-</p>
-
-<!--END_SECTION:footer-->
-
+Feito por Mauricio Aires 👋🏽
