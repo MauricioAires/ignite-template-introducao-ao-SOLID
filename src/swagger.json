@@ -1,0 +1,263 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Introdução ao SOLID documentação",
+        "description": "Documentação de introdução ao SOLID",
+        "version": "1.0.0",
+        "contact": {
+            "email": "mauricio@gmail.com"
+        }
+    },
+    "paths": {
+        "/users": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Create a new user",
+                "description": "Create a new user",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "name": "Mauricio Aires",
+                                    "email": "mauricio@gmail.com"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "admin": {
+                                            "type": "boolean"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        },
+                                        "created_at": {
+                                            "type": "Date"
+                                        },
+                                        "updated_at": {
+                                            "type": "Date"
+                                        }
+                                    },
+                                    "example": {
+                                        "id": "8942f78d-80d4-468c-b631-890002ea5584",
+                                        "name": "Mauricio Aires",
+                                        "admin": false,
+                                        "email": "mauricio@gmail.com",
+                                        "created_at": 1689351562620,
+                                        "updated_at": 1689351562620
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "User email already exists"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Get all users",
+                "description": "Get all users",
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "admin": {
+                                                "type": "boolean"
+                                            },
+                                            "email": {
+                                                "type": "string"
+                                            },
+                                            "created_at": {
+                                                "type": "Date"
+                                            },
+                                            "updated_at": {
+                                                "type": "Date"
+                                            }
+                                        },
+                                        "example": {
+                                            "id": "8942f78d-80d4-468c-b631-890002ea5584",
+                                            "name": "Mauricio Aires",
+                                            "admin": false,
+                                            "email": "mauricio@gmail.com",
+                                            "created_at": 1689351562620,
+                                            "updated_at": 1689351562620
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "User not found or user are not administrator"
+                    }
+                }
+            }
+        },
+        "/users/{user_id}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "ID do usuário",
+                        "required": true,
+                        "type": "string",
+                        "format": "uuid"
+                    }
+                ],
+                "summary": "Get user profile",
+                "description": "Get user profile",
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "admin": {
+                                            "type": "boolean"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        },
+                                        "created_at": {
+                                            "type": "Date"
+                                        },
+                                        "updated_at": {
+                                            "type": "Date"
+                                        }
+                                    },
+                                    "example": {
+                                        "id": "8942f78d-80d4-468c-b631-890002ea5584",
+                                        "name": "Mauricio Aires",
+                                        "admin": false,
+                                        "email": "mauricio@gmail.com",
+                                        "created_at": 1689351562620,
+                                        "updated_at": 1689351562620
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/users/{user_id}/admin": {
+            "patch": {
+                "tags": [
+                    "User"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "ID do usuário",
+                        "required": true,
+                        "type": "string",
+                        "format": "uuid"
+                    }
+                ],
+                "summary": "Turn user admin",
+                "description": "Turn user admin",
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "admin": {
+                                            "type": "boolean"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        },
+                                        "created_at": {
+                                            "type": "Date"
+                                        },
+                                        "updated_at": {
+                                            "type": "Date"
+                                        }
+                                    },
+                                    "example": {
+                                        "id": "8942f78d-80d4-468c-b631-890002ea5584",
+                                        "name": "Mauricio Aires",
+                                        "admin": false,
+                                        "email": "mauricio@gmail.com",
+                                        "created_at": 1689351562620,
+                                        "updated_at": 1689351562620
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        }
+    }
+}
